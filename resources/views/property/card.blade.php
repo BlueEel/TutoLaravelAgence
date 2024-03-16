@@ -7,5 +7,8 @@
         <div class="text-primary fw-bold">
             {{ number_format($property->price, thousands_separator: ' ') }} €
         </div>
+        @if($property->sold)
+            <span class="badge rounded-pill text-bg-danger">Vendu</span>
+        @endif
     </div>
 </div>
