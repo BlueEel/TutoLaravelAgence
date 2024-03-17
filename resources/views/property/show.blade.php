@@ -16,7 +16,10 @@
     <div class="mt-4">
         <h4>Intéressé par ce bien ?</h4>
 
-        <form action="" class="vstack gap-3">
+        {{-- Si l'on veut inclure le message flash ici, par contre cela se répète avec la détection des erreurs inclut dans les inputs ! --}}
+        @include('shared.flash')
+
+        <form action="{{ route('property.contact', $property) }}" method="post" class="vstack gap-3">
             @csrf
             <div class="row">
                 @include('shared.input', ['class' => 'col', 'name' => 'firstname', 'label' => 'Prénom'])
@@ -24,9 +27,11 @@
             </div>
             <div class="row">
                 @include('shared.input', ['class' => 'col', 'name' => 'phone', 'label' => 'Téléphone'])
+                {{-- Pour ajouter des valeurs de test qui apparaîtront dans l'input, inscrire dans le tableaux :
+                @include('shared.input', ['class' => 'col', 'name' => 'phone', 'label' => 'Téléphone', 'value' => '06 00 00 00 00']) --}}
                 @include('shared.input', ['type' => 'email', 'class' => 'col', 'name' => 'email', 'label' => 'Email'])
             </div>
-            @include('shared.input', ['type' => 'textarea', 'class' => 'col', 'name' => 'lastname', 'label' => 'Nom'])
+            @include('shared.input', ['type' => 'textarea', 'class' => 'col', 'name' => 'message', 'label' => 'Votre message'])
             <div>
                 <button class="btn btn-primary">Nous contacter</button>
             </div>

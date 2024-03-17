@@ -11,8 +11,9 @@
             <input type="number" placeholder="Nombre de pièce min" class="form-control" name="rooms" value="{{ $input['rooms'] ?? '' }}">
             <input type="number" placeholder="Budget max" class="form-control" name="price" value="{{ $input['price'] ?? '' }}">
             <input placeholder="Mot clef" class="form-control" name="title" value="{{ $input['title'] ?? '' }}">
-            <button class="btn btn-primary btn-sm flex-grow-0">
-                Rechercher
+            <button type="button" class="btn btn-primary btn-sm d-flex align-items-center">
+                <i class="fa fa-magnifying-glass me-2"></i>
+                <span>Rechercher</span>
             </button>
         </form>
     </div>
@@ -20,13 +21,13 @@
     <div class="container">
         <div class="row">
             @forelse ($properties as $property)
-            <div class="col-3 mb-4">
-                @include('property.card')
-            </div>
+                <div class="col-3 mb-4">
+                    @include('property.card')
+                </div>
             @empty
-            <div class="col text-center">
-               Aucun bien ne correspond à votre recherche !
-            </div>
+                <div class="col text-center">
+                Aucun bien ne correspond à votre recherche !
+                </div>
             @endforelse
         </div>
         <div class="my-4">
