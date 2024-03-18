@@ -8,10 +8,7 @@
 
     <script src="https://kit.fontawesome.com/feed0b9777.js" crossorigin="anonymous"></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <link rel="stylesheet" href="/css/style.css">
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
 
     <title>@yield('title') | Agence Immo</title>
 
@@ -20,7 +17,7 @@
 
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Agence</a>
+            <a class="navbar-brand" href="/">Agence Immo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,7 +29,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')])>Biens</a>
+                        <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')])>Nos Biens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" @class(['nav-link'])>Actualités</a>
+                    </li>
+                   <li class="nav-item">
+                        <a href="/" @class(['nav-link'])>Contact</a>
                     </li>
                 </ul>
             </div>
@@ -41,7 +44,10 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         @guest
-                            <a href=" {{ route('login')}}" @class(['nav-link', 'active' => str_contains($route, 'login.')])>Se connecter</a>
+                            <a href=" {{ route('login')}}" @class(['poppins-regular','nav-link', 'active' => str_contains($route, 'login.')])>
+                                <i class="fa-regular fa-user me-2"></i>
+                                Se connecter
+                            </a>
                         @endguest
                     </li>
                     <li>

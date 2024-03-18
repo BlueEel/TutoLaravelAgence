@@ -43,7 +43,7 @@
     </div>
     <div class="row">
         <div class="col-8">
-            <h2>Caractéristique</h2>
+            <h2>Caractéristiques</h2>
             <table class="table table-striped">
                 <tr>
                     <td>Surface habitable</td>
