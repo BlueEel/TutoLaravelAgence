@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
+
     <script src="https://kit.fontawesome.com/feed0b9777.js" crossorigin="anonymous"></script>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="/css/style.css">
+
     <title>@yield('title') | Agence Immo</title>
+
 </head>
 <body>
 
@@ -28,6 +36,25 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="ms-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        @guest
+                            <a href=" {{ route('login')}}" @class(['nav-link', 'active' => str_contains($route, 'login.')])>Se connecter</a>
+                        @endguest
+                    </li>
+                    <li>
+                        @auth
+                            <a href=" {{ route('admin.property.index')}}" @class(['nav-link', 'active' => str_contains($route, 'admin.')])>Dashboard Admin</a>
+                        @endauth
+                    </li>
+                </ul>
+            </div>
+
+
+
+
         </div>
     </nav>
     @yield('content')
