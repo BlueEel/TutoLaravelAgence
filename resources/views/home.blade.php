@@ -10,7 +10,7 @@
     </div>
 
     <div class="container">
-        <h2>Nos derniers biens</h2>
+        <h2 class="mb-4">Nos derniers biens</h2>
         <div class="row">
             @foreach ($properties as $property)
             <div class="col">
@@ -20,4 +20,12 @@
         </div>
     </div>
 
+@endsection
+
+@section('footer')
+    <footer class="bg-dark text-white text-center mt-4 pt-3">
+        <div class="container">
+            <p>&copy; 2024 Agence Immo. Tous droits réservés.</p>
+        </div>
+    </footer>
 @endsection

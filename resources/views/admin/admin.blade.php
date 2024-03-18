@@ -44,8 +44,8 @@
                                 <form action="{{ route('logout') }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <button class="nav-link">
-                                    <i class="fa-solid fa-user me-2"></i>
+                                <button class="nav-link agbalumo_regular">
+                                    <i class="fa-solid fa-user-astronaut me-2 iCustom"></i>
                                     Se déconnecter
                                 </button>
                                 </form>

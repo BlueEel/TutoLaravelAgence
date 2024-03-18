@@ -10,12 +10,14 @@
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 
+    <link rel="icon" type="image/png" href="{{ asset('storage/app/public/images') }}"/>
+
     <title>@yield('title') | Agence Immo</title>
 
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Agence Immo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,13 +31,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')])>Nos Biens</a>
+                        <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')])>
+                            <i class="fa-solid fa-city"></i>
+                            Biens
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/" @class(['nav-link'])>Actualités</a>
+                        <a href="/" @class(['nav-link'])>
+                            <i class="fa-solid fa-globe"></i>
+                            Actualités
+                        </a>
                     </li>
                    <li class="nav-item">
-                        <a href="/" @class(['nav-link'])>Contact</a>
+                        <a href="/" @class(['nav-link'])>
+                            <i class="fa-solid fa-envelope"></i>
+                            Contact
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -44,25 +55,26 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         @guest
-                            <a href=" {{ route('login')}}" @class(['poppins-regular','nav-link', 'active' => str_contains($route, 'login.')])>
-                                <i class="fa-regular fa-user me-2"></i>
+                            <a href=" {{ route('login')}}" @class(['agbalumo_regular','nav-link', 'active' => str_contains($route, 'login.')])>
+                                <i class="fa-regular fa-user me-2 iCustom"></i>
                                 Se connecter
                             </a>
                         @endguest
                     </li>
                     <li>
                         @auth
-                            <a href=" {{ route('admin.property.index')}}" @class(['nav-link', 'active' => str_contains($route, 'admin.')])>Dashboard Admin</a>
+                            <a href=" {{ route('admin.property.index')}}" @class(['agbalumo_regular','nav-link', 'active' => str_contains($route, 'admin.')])>
+                                <i class="fa-solid fa-user-astronaut me-2 iCustom"></i>
+                                Dashboard Admin
+                            </a>
                         @endauth
                     </li>
                 </ul>
             </div>
 
-
-
-
         </div>
     </nav>
     @yield('content')
+    @yield('footer')
 </body>
 </html>
