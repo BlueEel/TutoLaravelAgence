@@ -9,7 +9,6 @@
         @csrf
         @method($property->exists ? 'put' : 'post')
 
-
         <div class="row">
             @include('shared.input', ['class' => 'col', 'label' => 'Titre', 'name' => 'title', 'value' => $property->title])
             <div class="col row">
@@ -18,7 +17,6 @@
             </div>
         </div>
             @include('shared.input', ['type' => 'textarea', 'name' => 'description', 'value' => $property->description])
-
         <div class="row">
             @include('shared.input', ['class' => 'col', 'name' => 'rooms', 'label' => 'Pièces', 'value' => $property->rooms])
             @include('shared.input', ['class' => 'col', 'name' => 'bedrooms', 'label' => 'Chambres', 'value' => $property->bedrooms])
@@ -29,18 +27,8 @@
             @include('shared.input', ['class' => 'col', 'name' => 'city', 'label' => 'Ville', 'value' => $property->city])
             @include('shared.input', ['class' => 'col', 'name' => 'postal_code', 'label' => 'Code postal', 'value' => $property->postal_code])
         </div>
-        @include('shared.select', [
-            'name' => 'options',
-            'label' => 'Options',
-            'value' => $property->options()->pluck('id'),
-            'multiple' => true,
-        ])
-
-        @include('shared.checkbox', [
-            'name' => 'sold',
-            'label' => 'Vendu',
-            'value' => $property->sold
-        ])
+        @include('shared.select', ['name' => 'options', 'label' => 'Options', 'value' => $property->options()->pluck('id'), 'multiple' => true])
+        @include('shared.checkbox', ['name' => 'sold', 'label' => 'Vendu', 'value' => $property->sold])
 
         <div>
             <button class="btn btn-primary">

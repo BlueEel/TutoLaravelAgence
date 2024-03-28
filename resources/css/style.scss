@@ -42,3 +42,13 @@ footer {
     color: #fff;
     text-align: center;
 }
+
+.btn {
+    border-radius: 0 !important;
+    border: double 3px;
+}
+
+.nav_link_custom:hover,
+.nav_link_custom.active {
+    border-bottom: solid 1px;
+}

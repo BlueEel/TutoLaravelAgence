@@ -33,7 +33,7 @@ class PropertyController extends Controller
             $query = $query->where('title', 'like', "%{$request->validated('title')}%");
         }
         return view('property.index', [
-            'properties' => $query->paginate(16),
+            'properties' => $query->paginate(5),
             'input' => $request->validated()
         ]);
     }

@@ -31,19 +31,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')])>
+                        <a href="{{ route('property.index') }}" @class(['nav_link_custom', 'nav-link', 'active' => str_contains($route, 'property.')])>
                             <i class="fa-solid fa-city"></i>
                             Biens
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/" @class(['nav-link'])>
+                        <a href="/" @class(['nav_link_custom', 'nav-link'])>
                             <i class="fa-solid fa-globe"></i>
                             Actualités
                         </a>
                     </li>
                    <li class="nav-item">
-                        <a href="/" @class(['nav-link'])>
+                        <a href="/" @class(['nav_link_custom', 'nav-link'])>
                             <i class="fa-solid fa-envelope"></i>
                             Contact
                         </a>

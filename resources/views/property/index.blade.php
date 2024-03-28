@@ -11,7 +11,7 @@
             <input type="number" placeholder="Nombre de pièce min" class="form-control" name="rooms" value="{{ $input['rooms'] ?? '' }}">
             <input type="number" placeholder="Budget max" class="form-control" name="price" value="{{ $input['price'] ?? '' }}">
             <input placeholder="Mot clef" class="form-control" name="title" value="{{ $input['title'] ?? '' }}">
-            <button type="button" class="btn btn-dark btn-sm d-flex align-items-center">
+            <button type="submit" class="btn btn-dark btn-sm d-flex align-items-center">
                 <i class="fa fa-magnifying-glass me-2"></i>
                 <span>Rechercher</span>
             </button>
@@ -34,6 +34,5 @@
             {{ $properties->links() }}
         </div>
     </div>
-
 
 @endsection

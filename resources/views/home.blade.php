@@ -23,7 +23,7 @@
 @endsection
 
 @section('footer')
-    <footer class="bg-dark text-white text-center mt-4 pt-3">
+    <footer class="bd-footer bg-dark text-white text-center pt-3">
         <div class="container">
             <p>&copy; 2024 Agence Immo. Tous droits réservés.</p>
         </div>
